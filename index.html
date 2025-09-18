@@ -117,7 +117,7 @@ document.getElementById('copyBtn').addEventListener('click', function() {
 <script>
 const galaxyBg = document.querySelector('.galaxy-bg');
 
-// Generate more stars (increased to 200)
+// Generate more bananas (increased to 200)
 for (let i = 0; i < 200; i++) {
     const banana = document.createElement('div');
     banana.className = 'banana';
@@ -132,10 +132,10 @@ for (let i = 0; i < 200; i++) {
     galaxyBg.appendChild(banana);
 }
 // Stopwatch code
-let startTime = Date.now();
+const fixedStartDate = new Date('2025-09-18T14:00:00Z'); // <-- Set your desired start date/time (UTC)
 function updateStopwatch() {
-    const now = Date.now();
-    const elapsed = now - startTime;
+    const now = new Date();
+    const elapsed = now - fixedStartDate;
     const hours = String(Math.floor(elapsed / 3600000)).padStart(2, '0');
     const minutes = String(Math.floor((elapsed % 3600000) / 60000)).padStart(2, '0');
     const seconds = String(Math.floor((elapsed % 60000) / 1000)).padStart(2, '0');
